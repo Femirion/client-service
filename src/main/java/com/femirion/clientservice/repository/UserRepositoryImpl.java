@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Profile("!Stub")
+@Profile("!stub")
 @Service
 @AllArgsConstructor
 public class UserRepositoryImpl implements UserRepository {

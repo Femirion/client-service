@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
-@Profile("Stub")
+@Profile("stub")
 @Service
 public class UserRepositoryStub implements UserRepository {
     private static final UUID USER_ID = UUID.fromString("19526519-4775-4ee8-97d2-fa61376455b5");
