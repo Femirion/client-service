@@ -1,6 +1,7 @@
 package com.femirion.clientservice.service;
 
 import com.femirion.clientservice.domain.User;
+import com.femirion.clientservice.interact.AvatarProvider;
 import com.femirion.clientservice.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,6 +15,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final AvatarProvider avatarProvider;
 
     @Override
     public User getUserById(UUID userId) {
@@ -32,6 +34,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public User save(User user) {
         var savedUser = userRepository.save(user);
+//        TODO execute another microservice
+//        avatarProvider.getAvatarByUserId(savedUser.id());
         log.debug("Save user={}", savedUser);
         return savedUser;
     }
