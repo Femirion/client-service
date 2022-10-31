@@ -1,1 +1,5 @@
-
+logging:
+  level:
+    com.femirion.clientservice: INFO
+  pattern:
+    console: "%date  %clr(%-5level) --- [%12.12thread] %cyan(%-40.40logger{40}) : %msg %n"
