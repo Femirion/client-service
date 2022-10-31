@@ -9,5 +9,6 @@ public record User(
         String email,
         @JsonProperty("first_name") String firstName,
         @JsonProperty("last_name") String lastName,
+        // string in Base64
         String avatar) {
 }
