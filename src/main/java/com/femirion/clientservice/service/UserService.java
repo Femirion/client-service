@@ -1,6 +1,7 @@
 package com.femirion.clientservice.service;
 
 import com.femirion.clientservice.domain.User;
+import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
