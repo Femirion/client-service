@@ -3,10 +3,13 @@ package com.femirion.clientservice.repository;
 import com.femirion.clientservice.domain.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 public interface UserRepository {
 
     Optional<User> getById(UUID userId);
+
+    List<User> getAll();
 }

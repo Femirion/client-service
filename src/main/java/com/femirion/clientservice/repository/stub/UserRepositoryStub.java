@@ -4,6 +4,7 @@ import com.femirion.clientservice.domain.User;
 import com.femirion.clientservice.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -30,5 +31,14 @@ public class UserRepositoryStub implements UserRepository {
         );
 
         return Optional.of(user);
+    }
+
+    @Override
+    public List<User> getAll() {
+        return List.of(
+                new User(UUID.randomUUID(), "email1", "firstName1", "lastName1", "avatar1"),
+                new User(UUID.randomUUID(), "email2", "firstName2", "lastName2", "avatar2"),
+                new User(UUID.randomUUID(), "email3", "firstName3", "lastName13", "avatar3")
+        );
     }
 }
