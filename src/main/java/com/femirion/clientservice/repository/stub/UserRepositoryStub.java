@@ -43,4 +43,18 @@ public class UserRepositoryStub implements UserRepository {
                 new User(UUID.randomUUID(), "email3", "firstName3", "lastName13", "avatar3")
         );
     }
+
+    @Override
+    public User save(User user) {
+        return user;
+    }
+
+    @Override
+    public User update(User user) {
+        return user;
+    }
+
+    @Override
+    public void remove(UUID userId) {
+    }
 }
