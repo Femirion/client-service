@@ -28,4 +28,24 @@ public class UserServiceImpl implements UserService {
         log.debug("Getting users, size={}", users.size());
         return users;
     }
+
+    @Override
+    public User save(User user) {
+        var savedUser = userRepository.save(user);
+        log.debug("Save user={}", savedUser);
+        return savedUser;
+    }
+
+    @Override
+    public User update(User user) {
+        var updatedUser = userRepository.update(user);
+        log.debug("Update user={}", updatedUser);
+        return updatedUser;
+    }
+
+    @Override
+    public void remove(UUID userId) {
+        log.debug("Revome user by id, id={}", userId);
+        userRepository.remove(userId);
+    }
 }

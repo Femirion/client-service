@@ -10,6 +10,16 @@ import java.util.stream.Collectors;
 @Component
 public class UserTransformer {
 
+    public User map(UserDto user) {
+        return new User(
+                user.id(),
+                user.email(),
+                user.firstName(),
+                user.lastName(),
+                user.avatar()
+        );
+    }
+
     public UserDto map(User user) {
         return new UserDto(
                 user.id(),
