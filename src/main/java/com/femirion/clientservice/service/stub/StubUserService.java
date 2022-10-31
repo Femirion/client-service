@@ -7,6 +7,7 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Slf4j
@@ -20,5 +21,12 @@ public class StubUserService implements UserService {
         var user = userRepository.getById(userId);
         log.debug("Getting user by Id={}, user={}", user);
         return user.orElse(null);
+    }
+
+    @Override
+    public List<User> getAll() {
+        var users = userRepository.getAll();
+        log.debug("Getting users, size={}", users.size());
+        return users;
     }
 }

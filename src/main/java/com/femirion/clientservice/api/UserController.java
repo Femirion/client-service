@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -16,8 +17,13 @@ public class UserController {
     private final UserService userService;
     private final UserTransformer userTransformer;
 
-    @GetMapping("/{userId}")
+    @GetMapping("/users/{userId}")
     public UserDto getUserById(@PathVariable("userId") UUID userId) {
         return userTransformer.map(userService.getUserById(userId));
+    }
+
+    @GetMapping("/users")
+    public List<UserDto> getUsers() {
+        return userTransformer.map(userService.getAll());
     }
 }
