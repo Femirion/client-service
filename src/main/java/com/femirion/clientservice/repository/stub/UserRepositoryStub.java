@@ -2,10 +2,12 @@ package com.femirion.clientservice.repository.stub;
 
 import com.femirion.clientservice.domain.User;
 import com.femirion.clientservice.repository.UserRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class UserRepositoryStub implements UserRepository {
     private static final UUID USER_ID = UUID.fromString("19526519-4775-4ee8-97d2-fa61376455b5");
     private static final String EMAIL_FORMAT = "email_%s";
